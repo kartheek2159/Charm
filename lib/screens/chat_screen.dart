@@ -1,5 +1,5 @@
 import 'package:chatapp/widgets/chat/messages.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:chatapp/widgets/chat/new_messages.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -41,16 +41,17 @@ class chatScreen extends StatelessWidget {
           Expanded(
             child: Messages(),
           ),
+          NewMessage(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          FirebaseFirestore.instance
-              .collection('chats/29N0hcDps3dEnsz7IwoM/messages')
-              .add({'text': 'this was added by clicking the button'});
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: const Icon(Icons.add),
+      //   onPressed: () {
+      //     FirebaseFirestore.instance
+      //         .collection('chats/29N0hcDps3dEnsz7IwoM/messages')
+      //         .add({'text': 'this was added by clicking the button'});
+      //   },
+      // ),
     );
   }
 }
